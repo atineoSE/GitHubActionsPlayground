@@ -13,13 +13,11 @@ jobs:
     steps:
       - name: List environmen vars
         run: env
-      - name: Environment var test
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Run script
         run: |
-          echo "DUMMY_SECRET=$DUMMY_SECRET" >> ~/.env
-          echo "DUMMY_SECRET=\"$DUMMY_SECRET\"" >> ~/.env
-          echo "DUMMY_VAR=$DUMMY_VAR" >> ~/.env
-          echo "DUMMY_VAR=\"$DUMMY_VAR\"" >> ~/.env
-          cat ~/.env
+          python script.py
         env:
           DUMMY_SECRET: ${{ secrets.DUMMY_SECRET }}
           DUMMY_VAR: ${{ vars.DUMMY_VAR }}
