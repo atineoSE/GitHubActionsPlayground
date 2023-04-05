@@ -11,6 +11,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: List environmen vars
+        run: env
       - name: Environment var test
         run: |
           echo "DUMMY_SECRET=$DUMMY_SECRET" >> ~/.env
@@ -20,4 +22,4 @@ jobs:
           cat ~/.env
         env:
           DUMMY_SECRET: ${{ secrets.DUMMY_SECRET }}
-          DUMMY_VAR: ${{ env.DUMMY_VAR }}
+          DUMMY_VAR: ${{ vars.DUMMY_VAR }}
