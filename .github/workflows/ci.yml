@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Environment var test
         run: |
-          echo "DUMMY_SECRET=$DUMMY_SECRET >> ~/.env
+          echo "DUMMY_SECRET=$DUMMY_SECRET" >> ~/.env
           echo "DUMMY_SECRET=\"$DUMMY_SECRET\"" >> ~/.env
           echo "DUMMY_VAR=$DUMMY_VAR" >> ~/.env
           echo "DUMMY_VAR=\"$DUMMY_VAR\"" >> ~/.env
