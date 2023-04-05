@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build
+    runs-on: macos-latest
+
+    steps:
+      - name: Environment var test
+        run: |
+          echo "DUMMY_SECRET=$DUMMY_SECRET >> .env
+          echo "DUMMY_SECRET=\"$DUMMY_SECRET\"" >> .env
+          echo "DUMMY_VAR=$DUMMY_VAR" >> .env
+          echo "DUMMY_VAR=\"$DUMMY_VAR\"" >> .env
+        env:
+          DUMMY_SECRET: ${{ secrets.DUMMY_SECRET }}
+          DUMMY_VAR: ${{ env.DUMMY_VAR }}
