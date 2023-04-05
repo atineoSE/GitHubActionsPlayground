@@ -1,7 +1,7 @@
-# GitHub Actions Playground: simple test around GitHub Actions and environment variables.
+# GitHub Actions Playground: simple test around environment variables
 
 We specify the following environment variables in GitHub, under Settings -> Secrets and variables -> Actions:
-* Under Secrets, we specify `DUMMY_SECRET` with value `my_dummy_secret` (without quotes). We can't check this value anymore in the GitHub interface, because we made a secret and it won't be shown, so it's important to remember how we entered it.
+* Under Secrets, we specify `DUMMY_SECRET` with value `my_dummy_secret` (without quotes). We can't check this value anymore in the GitHub interface, because we've made it a secret and it won't be shown, so it's important to remember how we entered it.
 * Under Variables, we specify `DUMMY_VAR` with value `my_dummy_var` (without quotes). We can check this value anytime in the GitHub interface, because it's not a secret variable, thus it is not considered sensitive to expose its value.
 
 We check in a python script the values as follows:
