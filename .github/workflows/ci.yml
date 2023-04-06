@@ -18,6 +18,9 @@ jobs:
       - name: Run script
         run: |
           python script.py
+          git add counter
+          git commit -m "Increment counter"
+          git push
         env:
           DUMMY_SECRET: ${{ secrets.DUMMY_SECRET }}
           DUMMY_VAR: ${{ vars.DUMMY_VAR }}
