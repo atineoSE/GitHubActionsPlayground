@@ -12,6 +12,7 @@ def check_environment_vars():
     if dummy_secret == "my_dummy_secret":
     	print("Dummy secret retrieved successfully")
     else:
+        print("Dummy secret not recognized")
 
 def increment_counter():
     with open('counter', 'r+') as f: 
