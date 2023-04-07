@@ -5,6 +5,8 @@ on:
     branches:
       - main
 
+  workflow_dispatch:      
+
 jobs:
   build:
     name: Build and run
@@ -18,9 +20,10 @@ jobs:
       - name: Run script
         run: |
           python script.py
-          git add counter
-          git commit -m "Increment counter"
-          git push
+          # Need to add key to enable push
+          # git add counter
+          # git commit -m "Increment counter"
+          # git push
         env:
           DUMMY_SECRET: ${{ secrets.DUMMY_SECRET }}
           DUMMY_VAR: ${{ vars.DUMMY_VAR }}
